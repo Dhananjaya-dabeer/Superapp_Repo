@@ -38,7 +38,13 @@ function Inputcomp() {
       isFormValid = false;
       document.getElementById("mobileinput").innerText = "Field is required";
       
-    } else {
+    }
+    else if (mobile.length !== 10){
+      isFormValid = false;
+      document.getElementById("mobileinput").innerText = "enter-10 numbers";
+    }
+    
+    else {
       document.getElementById("mobileinput").innerText = "";
     }
     if (!checkBoxValue ){
