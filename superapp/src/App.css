@@ -1,5 +1,8 @@
-*{
+body{
   background-color: black;
+}
+*{
+  background-color: initial;
 }
 .App {
   text-align: center;
@@ -84,10 +87,10 @@ background-color:initial;
   bottom: initial;
 
 }
-.inputfields{
+.inputfields .userdetails{
   width: 45%;
   position: absolute;
-  top: 28%;
+  top: 26%;
   left: 53%;
   display: flex;
   flex-direction: column;
@@ -96,17 +99,16 @@ background-color:initial;
 }
 .inputfields input{
   width: 62%;
-  margin-bottom: 3%;
   font-size: 30px;
   color: #7C7C7C;
   background-color:#292929;
   border-radius: 2%;
   font-family: DM Sans;
- 
+  margin: 0;
 }
 .inputfields button{
   position: absolute;
-  top: 23em;
+  top: 30em;
   right: 9.5em;
   background-color: #72DB73;
   color: #FFFFFF;
@@ -116,29 +118,67 @@ background-color:initial;
   border-color: black;
   cursor: pointer;
 }
-.checkbox{
+#checkbox{
   position: absolute;
-  right: 19.8%;
-  top: 60%;
+  right: 37%;
+  top: 71.4%;
+  margin: 0;
+  width: 14px;
+  height: 10px;
 
 }
-.checkbox input{
+#checkbox {
   background-color:#FFFFFF ;
+  
 }
-.checkbox span{
+#checkboxspan{
+  position: absolute;
+  right: 17%;
+  top: 70.5%;
   color:  #7C7C7C;
   font-family: DM sans;
+  margin: 0;
+}
+#checkboxinput{
+  position: absolute;
+  background-color: initial;
+  top: 75%;
+  font-size: 1em;
+  left: 65%;
+  margin: 0%;
+  padding: top 0; 
+  color: red;
 }
 .Terms_Policy{
   font-family: Roboto;
   position: absolute;
-  top: 77%;
-  right: 18em;
+  top: 88%;
+  right: 24em;
   color:#7C7C7C;
-  font-size: 0.8em;
+  font-size: 0.6em;
   text-align: left;
   letter-spacing: normal ;
 }
 .Terms_Policy span{
   color:#72DB73;
+}
+.inputfields p{
+  margin-top: 0%;
+  padding: top 0; ;
+  margin-bottom: 3%;
+  margin-right: 46%;
+  color: red;
+}
+.inputfields #mobilenum{
+  margin-top: 0.2%;
+  margin-left: 0.2%;
+}
+
+#reg_msg{
+  color: #FFD700;
+  position: absolute;
+  top: 60%;
+  left: 62%;
+  font-size: xx-large;
+  margin: 0;
 }

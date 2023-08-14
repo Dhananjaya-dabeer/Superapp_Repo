@@ -1,5 +1,4 @@
 import './App.css';
-import Checkboxcomp from './components/Checkboxcomp';
 import Headercomp from './components/Headercomp';
 import Imagecomp from './components/Imagecomp';
 import Termscondcomp from './components/Terms_condcomp';
@@ -13,7 +12,6 @@ function App() {
       <Imagecomp/>
       <Headercomp/>
       <Inputcomp/>
-      <Checkboxcomp/>
       <Termscondcomp/>
     </div>
   );

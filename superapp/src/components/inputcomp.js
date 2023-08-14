@@ -1,15 +1,173 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useState } from "react";
 
 function Inputcomp() {
+  let [name, setName] = useState("");
+  let [userName, setUserName] = useState("");
+  let [email, setEmail] = useState("");
+  let [mobile, setMobile] = useState("");
+ 
+  useEffect(() => {}, [name]);
+  useEffect(() => {}, [userName]);
+  useEffect(() => {}, [email]);
+  useEffect(() => {}, [mobile]);
+  function errorCheck(event) {
+    event.preventDefault();
+    const checkBox = document.getElementById("checkbox");
+    const checkBoxValue = checkBox.checked;
+    let isFormValid = true;
+    if (name === "") {
+      isFormValid = false;
+      document.getElementById("nameinput").innerText = "Field is required";
+    } else {
+      document.getElementById("nameinput").innerText = "";
+    }
+    if (userName === "") {
+      isFormValid = false;
+      document.getElementById("usernameinput").innerText = "Field is required";
+    } else {
+      document.getElementById("usernameinput").innerText = "";
+    }
+    if (email === "") {
+      isFormValid = false;
+      document.getElementById("emailinput").innerText = "Field is required";
+    } else {
+      document.getElementById("emailinput").innerText = "";
+    }
+    if (mobile === "") {
+      isFormValid = false;
+      document.getElementById("mobileinput").innerText = "Field is required";
+      
+    } else {
+      document.getElementById("mobileinput").innerText = "";
+    }
+    if (!checkBoxValue ){
+      isFormValid = false;
+      document.getElementById("checkboxinput").innerText = "Check this box if you want to proceed"
+    }
+    else{
+      document.getElementById("checkboxinput").innerText = ""
+      
+    }
+     if(!isFormValid){
+      document.getElementById("reg_msg").innerText = ""
+      }
+    else{
+
+      localStorage.setItem('Name',JSON.stringify(name))
+      localStorage.setItem('userName',JSON.stringify(userName))
+      localStorage.setItem('mobile',JSON.stringify(mobile))
+      localStorage.setItem('email',JSON.stringify(email))
+      document.getElementById("reg_msg").innerText = "Registration was successful."
+    }
+  }
+
+  let HandleName = (event) => {
+    setName(event.target.value);
+
+    if (name === null) {
+      document.getElementById("nameinput").innerText = "Field is required";
+    } else {
+      document.getElementById("nameinput").innerText = "";
+    }
+  };
+
+  let HandleUserName = (event) => {
+    setUserName(event.target.value);
+    if (userName === null) {
+      document.getElementById("usernameinput").innerText = "Field is required";
+    } else {
+      document.getElementById("usernameinput").innerText = "";
+    }
+  };
+
+  let HandleEmail = (event) => {
+    setEmail(event.target.value);
+
+    if (email === null) {
+      document.getElementById("emailinput").innerText = "Field is required";
+    } else   {
+      document.getElementById("emailinput").innerText = "";
+    }
+  };
+
+  let HandleMobile = (event) => {
+    setMobile(event.target.value);
+    let inputElement = event.target.value;
+    let mobileValue = inputElement.trim();
+    if(mobileValue === ""){
+      document.getElementById("mobileinput").innerText = "Field is required";
+      
+    }
+    else if(mobileValue.length === 10) {
+    
+    document.getElementById("mobileinput").innerText = "";
+    }
+    else if(isNaN(mobileValue)){
+      document.getElementById("mobileinput").innerText = "enter a valid Number";
+    }
+      else{
+        document.getElementById("mobileinput").innerText = "enter 10-digit number";
+
+      }
+  
+      
+    
+  };
+  let HandleCheckBox = (event)=>{
+    let checkBox = event.target.checked
+    
+    if (!checkBox){
+      document.getElementById("checkboxinput").innerText = "Check this box if you want to proceed"
+    }
+    else{
+      document.getElementById("checkboxinput").innerText = ""
+      
+    }
+  }
+ 
+  
   return (
-    <form className='inputfields'>
-      <input type="text" name='name' placeholder='Name'/>
-      <input type="text" name='username' placeholder='UserName' />
-      <input type="email" name='email'placeholder='Email' />
-      <input type="text" name='mobile'placeholder='Mobile'/>
-      <button type='submit'>SIGN UP</button>
+    <form className="inputfields" onSubmit={errorCheck}>
+      <div className="userdetails">
+      <input type="text" name="name"  placeholder="Name" onChange={HandleName} />
+      <p id="nameinput"></p>
+      <input
+        type="text"
+        name="username"
+        placeholder="UserName"
+      
+        onChange={HandleUserName}
+      />
+      <p id="usernameinput"></p>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        
+        onChange={HandleEmail}
+      />
+      <p id="emailinput"></p>
+      <input
+        id = "mobilenumber"
+        type="text"
+        name="mobile"
+        
+        placeholder="Mobile"
+        onChange={HandleMobile}
+      />
+      <p id="mobileinput"><span id="mobilenum"></span></p>
+      <button type="submit">SIGN UP</button>
+      </div>
+      
+      <input type="checkbox" id="checkbox" onChange={HandleCheckBox} /> <span id="checkboxspan">Share my registration data with Superapp</span>
+      <p id = "checkboxinput"></p>
+
+        <div id="reg_msg">
+          
+        </div>
     </form>
-  )
+  );
 }
 
-export default Inputcomp
+export default Inputcomp;
