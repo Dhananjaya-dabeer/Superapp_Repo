@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Inputcomp() {
   let [name, setName] = useState("");
   let [userName, setUserName] = useState("");
   let [email, setEmail] = useState("");
   let [mobile, setMobile] = useState("");
+  let [isFormValid, setisFormValid] = useState(false)
  
   useEffect(() => {}, [name]);
   useEffect(() => {}, [userName]);
@@ -65,7 +67,9 @@ function Inputcomp() {
       localStorage.setItem('mobile',JSON.stringify(mobile))
       localStorage.setItem('email',JSON.stringify(email))
       document.getElementById("reg_msg").innerText = "Registration was successful."
+      setisFormValid(true); 
     }
+
   }
 
   let HandleName = (event) => {
@@ -73,8 +77,10 @@ function Inputcomp() {
 
     if (name === null) {
       document.getElementById("nameinput").innerText = "Field is required";
+
     } else {
       document.getElementById("nameinput").innerText = "";
+      
     }
   };
 
@@ -82,8 +88,10 @@ function Inputcomp() {
     setUserName(event.target.value);
     if (userName === null) {
       document.getElementById("usernameinput").innerText = "Field is required";
+      setisFormValid(false)
     } else {
       document.getElementById("usernameinput").innerText = "";
+      
     }
   };
 
@@ -92,8 +100,10 @@ function Inputcomp() {
 
     if (email === null) {
       document.getElementById("emailinput").innerText = "Field is required";
+      setisFormValid(false)
     } else   {
       document.getElementById("emailinput").innerText = "";
+      
     }
   };
 
@@ -103,18 +113,21 @@ function Inputcomp() {
     let mobileValue = inputElement.trim();
     if(mobileValue === ""){
       document.getElementById("mobileinput").innerText = "Field is required";
+      setisFormValid(false)
       
     }
     else if(mobileValue.length === 10) {
     
     document.getElementById("mobileinput").innerText = "";
+    
     }
     else if(isNaN(mobileValue)){
       document.getElementById("mobileinput").innerText = "enter a valid Number";
+      setisFormValid(false)
     }
       else{
         document.getElementById("mobileinput").innerText = "enter 10-digit number";
-
+        setisFormValid(false)
       }
   
       
@@ -125,6 +138,7 @@ function Inputcomp() {
     
     if (!checkBox){
       document.getElementById("checkboxinput").innerText = "Check this box if you want to proceed"
+      setisFormValid(false)
     }
     else{
       document.getElementById("checkboxinput").innerText = ""
@@ -132,8 +146,9 @@ function Inputcomp() {
     }
   }
  
-  
+
   return (
+    <>
     <form className="inputfields" onSubmit={errorCheck}>
       <div className="userdetails">
       <input type="text" name="name"  placeholder="Name" onChange={HandleName} />
@@ -163,7 +178,7 @@ function Inputcomp() {
         onChange={HandleMobile}
       />
       <p id="mobileinput"><span id="mobilenum"></span></p>
-      <button type="submit">SIGN UP</button>
+      <button type="submit" id="Router">SIGN UP</button>
       </div>
       
       <input type="checkbox" id="checkbox" onChange={HandleCheckBox} /> <span id="checkboxspan">Share my registration data with Superapp</span>
@@ -172,7 +187,10 @@ function Inputcomp() {
         <div id="reg_msg">
           
         </div>
+        
     </form>
+    {isFormValid&&(<Link id="CategoryPage" to={"/Category"}>Click here to Catogery List </Link>)}
+    </>
   );
 }
 
