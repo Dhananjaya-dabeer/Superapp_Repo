@@ -1,12 +1,15 @@
-import React from 'react'
-import"../App.css"
+import React from "react";
+import "../App.css";
+import TopLeftCategory from "../components/TopLeftCategory";
+import RightCatComp from "../components/RightCatComp";
 
 function CategoryPage() {
   return (
-    <div className='Category'>
-      hey
+    <div>
+      <TopLeftCategory />
+      <RightCatComp />
     </div>
-  )
+  );
 }
 
-export default CategoryPage
+export default CategoryPage;
