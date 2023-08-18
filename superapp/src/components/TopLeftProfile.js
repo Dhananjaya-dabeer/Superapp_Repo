@@ -20,7 +20,8 @@ const options = {
 };
 
 const formattedTime = new Intl.DateTimeFormat('en-US', options).format(date);
-
+// 6739adbda42a4f8cad1180649231808
+let weather = (" http://api.weatherapi.com/v1/current.json?key=6739adbda42a4f8cad1180649231808&q=india&aqi=no");
   useEffect(() => {
     let name = JSON.parse(localStorage.getItem("Name"));
     document.getElementById("n-ame").innerText = name;
@@ -93,7 +94,23 @@ const formattedTime = new Intl.DateTimeFormat('en-US', options).format(date);
       document.getElementById("fiction").innerText = "Fiction";
       document.getElementById("fiction").classList.remove("no-display");
     }
+    fetch(weather).then((result)=>{
+        result.json()
+    
+    .then((data)=> {
+        document.getElementById("weather").innerHTML = data.current.condition.text;
+        document.getElementById("temp").innerHTML = data.current.temp_c
+        document.getElementById("pressure").innerHTML = data.current.pressure_mb
+        document.getElementById("wind").innerHTML = data.current.wind_kph
+        document.getElementById("humidity").innerHTML = data.current.humidity
+
+
+        console.log(data)
+    })}).catch((error)=>{document.getElementById("weather").innerHTML = error
+      
+    })
   });
+
 
   return (
     <div className="left-profile">
@@ -130,9 +147,40 @@ const formattedTime = new Intl.DateTimeFormat('en-US', options).format(date);
               <p id="date">{moment().format("DD-MM-YYYY")}</p> 
               <p id="time">{formattedTime}</p>
             </div>
-            <div className="weather">
-                hey
+            <div className="weather" >
+                <div className="cloud">
+                    <img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" alt="" />
+                    <p id="weather"></p>
+                </div>
+                    <div className="partician">
+                        |
+                    </div>
+                <div className="temp-presure">
+                    <div>
+                         <p id="temp"> </p><span>°C</span>
+                    </div>
+                    <div>
+                        <p id="pressure"></p> <span>mbar</span>
+                    </div>
+                    <div>
+                        <p>Pressure</p>
+                    </div>
+                </div>
+                    <div className="partician">
+                        |
+                    </div>
+                <div className="wind-humidity">
+                    <div>
+                        <p id="wind"></p> <span>km/h</span>
+                        <p>wind</p>
+                    </div>
+                    <div>
+                        <p id="humidity"></p> <span>%</span>
+                        <p>humidity</p>
+                    </div>
+                </div>
             </div>
+            
         </div>
       </div>
     </div>

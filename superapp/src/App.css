@@ -377,7 +377,7 @@ margin-left: -2%;
 .page-box{
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 7%;
+  margin-top: 3%;
 }
 .personal{
   background-color: #5746EA;
@@ -463,4 +463,43 @@ background-color: #101744;
 }
 .time-weather{
  margin-top: 2% ;
+}
+.weather p{
+  margin: 0;
+}
+.weather img{
+  margin: 0;
+}
+.weather{
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-family: Roboto;
+}
+#temp{
+  display: inline-block;
+  font-size: 3em;
+}
+.temp-presuure span{
+ font-size: 3em;  
+}
+#pressure{
+  display: inline-block;
+}
+.wind-humidity {
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+#wind{
+  display: inline-block;
+}
+#humidity{
+  display: inline-block;
+}
+.partician{
+  line-height: 1.5em;
+  font-size: 3em;
 }
