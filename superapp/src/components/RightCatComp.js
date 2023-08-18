@@ -256,20 +256,12 @@ function RightCatComp() {
       document.getElementById("error-msg").innerHTML =
         "&#9888; Minimum 3 categories required";
       document.getElementById("profile-page").classList.remove("nextpage-btn");
-    } else {
+    }
+    
+    else {
       document.getElementById("error-msg").innerHTML = "";
-      if (
-        action ||
-        drama ||
-        romance ||
-        thriller ||
-        western ||
-        horror ||
-        fantasy ||
-        music ||
-        fiction
-      ) {
-        localStorage.setItem("Action", JSON.stringify(action));
+      if (selected.length === 9 || selected.length>=3) {
+        localStorage.setItem("action", JSON.stringify(action));
         localStorage.setItem("drama", JSON.stringify(drama));
         localStorage.setItem("romance", JSON.stringify(romance));
         localStorage.setItem("thriller", JSON.stringify(thriller));
@@ -279,10 +271,13 @@ function RightCatComp() {
         localStorage.setItem("music", JSON.stringify(music));
         localStorage.setItem("fiction", JSON.stringify(fiction));
         document.getElementById("profile-page").classList.add("nextpage-btn");
-      } else {
+      } 
+      else{
+        document.getElementById("profile-page").classList.remove("nextpage-btn");
       }
     }
   };
+ 
   return (
     <div className="imgcat">
       <div className="imgline1">
