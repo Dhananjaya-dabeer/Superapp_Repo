@@ -1,8 +1,12 @@
 body{
   background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow:hidden ;
 }
 *{
   background-color: initial;
+ 
 }
 .App {
   text-align: center;
@@ -374,14 +378,14 @@ margin-left: -2%;
   left: 60%;
 }
 
-.page-box{
+/* .page-box{
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 3%;
-}
+} */
 .personal{
   background-color: #5746EA;
-  width: 30%;
+  /* width: 30%; */
   display: flex;
   justify-content: space-evenly;
   color: #fff; 
@@ -392,11 +396,11 @@ margin-left: -2%;
   font-size: 2em;
   margin: 0;
 }
-/* .personal-info-container{
+.personal-info-container{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-} */
+}
 .personal-info {
   text-align: left;
   font-size: 1.25em;
@@ -430,14 +434,14 @@ margin-left: -2%;
   justify-content: space-around;
 }
 .date-time{
-  width: 30%;
-  height: 20%;
+  /* width: 30%;
+  height: 20%; */
   background-color: #FF4ADE;
   display: flex;
   justify-content: space-evenly;
   color: #fff;
   
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 600;
   line-height: 1.8em;
   letter-spacing: 0.02em;
@@ -451,8 +455,8 @@ margin-left: -2%;
   margin: 0;
 }
 .weather{
-width: 30%;
-height: 30%;
+/* width: 30%;
+height: 30%; */
 background-color: #101744;
 
 }
@@ -463,7 +467,7 @@ background-color: #101744;
 }
 .time-weather{
  margin-top: 2% ;
-}
+ }
 .weather p{
   margin: 0;
 }
@@ -475,6 +479,7 @@ background-color: #101744;
   display: flex;
   justify-content: space-between;
   font-family: Roboto;
+  border-radius: 0 0 19px 19px;
 }
 #temp{
   display: inline-block;
@@ -502,4 +507,180 @@ background-color: #101744;
 .partician{
   line-height: 1.5em;
   font-size: 3em;
+}
+.personal_weather-notes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.personal-weather-notes-timer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.notes{
+  background-color: #F1C75B;
+  border-radius: 19px;
+  font-family: Roboto;
+  font-weight: 700;
+}
+.notes h2{
+  color: black;
+  font-family: Roboto;
+  border-radius: 19px;
+  text-align: left;
+  /* margin: 0; */
+}
+.notes textarea{
+border:#F1C75B ;
+border-radius: 19px;
+font-family: Roboto;
+font-weight: 700;
+
+}
+
+.timer{
+  background-color: #1E2343;
+  /* margin: 2% 16% 0 14.5%; */
+  display: flex;
+  justify-content: space-between;
+  /* width: 59.8%; */
+  margin-top: 4%;
+  /* margin-left: 20.1%; */
+}
+
+#arrow-u1{
+  cursor: pointer;
+  margin: 0;
+  
+}
+#arrow-u2{
+  cursor: pointer;
+  margin: 0;
+  
+}
+#arrow-u3{
+  cursor: pointer;
+  margin: 0;
+  
+}
+.upperarrow{
+display: flex;
+justify-content: space-evenly;
+
+}
+/* #arrow-l1{
+  cursor: pointer;
+  margin: 0;
+  transform: rotate(+90deg);
+
+}
+#arrow-l2{
+  cursor: pointer;
+  margin: 0;
+  transform: rotate(+90deg);
+}
+#arrow-l3{
+  cursor: pointer;
+  margin: 0;
+  transform: rotate(+90deg);
+} */
+.lowerarrow{
+display: flex;
+justify-content: space-evenly;
+
+}
+.arrows{
+  color:#949494;
+display: flex;
+justify-content:space-evenly;
+flex-direction: column;
+width: 60%;
+}
+.circular-timer{
+  padding: 3%;
+}
+.time{
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.arrows button{
+  background-color: #FF6A6A;
+  width: 40%;
+  height: 20%;
+  /* line-height: 100%; */
+  margin-left: 30%;
+  margin-top: 10%;
+  border-radius: 19px;
+  color: white;
+  font-family: Roboto;
+  cursor: pointer;
+  border: #FF6A6A ;
+}
+.time input{
+  width: 38%;
+  text-align: center;
+  color: white;
+}
+#hh{
+  margin-left:43%;
+}
+#ss{
+  margin-right: 43%;
+}
+
+.left-profile{
+  display: flex;
+  justify-content: space-around;
+  margin:3%   ;
+}
+#news-header{
+  position: absolute;
+  top: 44%;
+  left:63.85% ;
+}
+#right-hlls{
+  
+  height:59vh ;
+}
+.news{
+  background-color: white;
+  border-radius: 19px 19px 19px 19px;
+}
+.newscontainer #author{
+  color: blue;
+}
+#newscontainer1{
+  font-size: large;
+  width: 24vw;
+  text-align: justify;
+  font-family: Roboto ;
+  color: red;
+  
+}
+#newscontainer2{
+  font-size: large;
+  width: 24vw;
+  text-align: justify;
+  font-family: Roboto ;
+}
+
+.center{
+  position: absolute;
+  top: 51%;
+  left: 77%;
+  transform: translate(-43%, -30%);
+  font-size: 1.3em;
+  color: #fff;
+  width: 24vw;
+  text-align: justify;
+  font-family: Roboto ;
+}
+#newsdate{
+  color: #fff;
+  font-size: 0.8em;
+  opacity: 0.5;
 }
