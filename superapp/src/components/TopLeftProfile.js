@@ -31,9 +31,9 @@ function TopLeftProfile() {
   // 6739adbda42a4f8cad1180649231808 ---->weather API
   //8e5495af7fea411b8f53dec3953b412b ---->news API
   let weather =
-    " http://api.weatherapi.com/v1/current.json?key=6739adbda42a4f8cad1180649231808&q=india&aqi=no";
+    " https://api.weatherapi.com/v1/current.json?key=6739adbda42a4f8cad1180649231808&q=india&aqi=no";
   let news =
-    "https://newsapi.org/v2/top-headlines?country=in&apiKey=8e5495af7fea411b8f53dec3953b412b";
+  'https://newsdata.io/api/1/news?apikey=pub_27955fb5e4519b698040f99ac1bb719f07e48&country=in&language=en'
   useEffect(() => {}, [hour, minute, second, timeHour]);
   useEffect(() => {}, [timeHour]);
   useEffect(() => {
@@ -132,12 +132,14 @@ function TopLeftProfile() {
         return result.json();
       })
       .then((data) => {
-        console.log(data);
-        let title = data.articles[0].title;
-        let author = data.articles[0].author;
-
-        let description = data.articles[0].description;
-        // console.log(con)
+        // console.log(data);
+        let title = data.results[0].title;
+        let author = data.results[0].source_id;
+        // results[0].description
+        let description = data.results[0].description;
+        // console.log(data)
+        let time  = data.results[0].pubDate
+        document.getElementById('newsdate').innerHTML = time;
         document.getElementById("center").innerHTML = title;
         document.getElementById("newscontainer1").innerHTML = author;
 
