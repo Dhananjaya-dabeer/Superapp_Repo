@@ -7,7 +7,7 @@ import RegisterPage from "./pages/RegisterPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CategoryPage from "./pages/CategoryPage";
 import ProfilePage from "./pages/ProfilePage";
-
+import EntertainmentPage from "./pages/EntertainmentPage";
 function App() {
   return (
     <div className="App">
@@ -16,6 +16,7 @@ function App() {
           <Route index element={<RegisterPage />} />
           <Route path="/Category/*" element={<CategoryPage />} />
           <Route path="/Category/Profile" element={<ProfilePage />} />
+          <Route path="/Category/Profile/Entertainment" element={<EntertainmentPage/>}/>
         </Routes>
       </BrowserRouter>
     </div>

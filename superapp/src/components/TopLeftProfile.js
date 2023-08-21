@@ -5,6 +5,7 @@ import moment from "moment/moment";
 import News from "../images/News Header.png";
 import { useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import { Link } from "react-router-dom";
 function TopLeftProfile() {
   let action = JSON.parse(localStorage.getItem("action"));
   let drama = JSON.parse(localStorage.getItem("drama"));
@@ -173,7 +174,7 @@ function TopLeftProfile() {
     setMinute(0);
     setSecond(0);
   };
-
+      
   return (
     <div className="left-profile">
       <div className="personal-weather-notes-timer">
@@ -357,6 +358,7 @@ function TopLeftProfile() {
           </div>
         </div>
       </div>
+      <Link id="browse" to={'/Category/Profile/Entertainment'}>Browse</Link>
     </div>
   );
 }

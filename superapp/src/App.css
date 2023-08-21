@@ -684,3 +684,19 @@ width: 60%;
   font-size: 0.8em;
   opacity: 0.5;
 }
+#browse{
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  font-family: Roboto;
+  background-color: green;
+  top: 97%;
+  left: 92%;
+  border-radius: 19px;
+  width: 6%;
+  height: 4%;
+  text-align: center;
+}
+.entertainment{
+  color: red;
+}
