@@ -698,5 +698,42 @@ width: 60%;
   text-align: center;
 }
 .entertainment{
-  color: red;
+  margin: 3% 5%;
+}
+.superapp_profile{
+  display: flex;
+  justify-content: space-between;
+}
+.superapp{
+  margin: 0;
+  font-family: Single Day;
+  font-weight: 400;
+  font-size: 2.5em;
+  color: #72DB73;
+}
+.entertainment-header{
+  padding-bottom: 2.5%;
+  color: #fff;
+  text-align: left;
+  font-family: Roboto;
+}
+.moviescontainer p{
+  color: #878787;
+  text-align: left;
+}
+.moviescontainer img{
+  width: 14%;
+  /* height: 200px; */
+}
+
+.img-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.entertainment img:hover{
+  /* border-color: #11B800; */
+  border-radius: 19px;
+  padding: 2px;
+   border: 2px solid #11B800;
 }
