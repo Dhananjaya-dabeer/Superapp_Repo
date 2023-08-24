@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import Profile from "../images/profile_icon.png";
+import { Link } from "react-router-dom";
 
 function EntertainmentPage() {
 
@@ -14,7 +15,7 @@ function EntertainmentPage() {
             let fantasy = JSON.parse(localStorage.getItem("fantasy"))
             let music = JSON.parse(localStorage.getItem("music"))
             let fiction = JSON.parse(localStorage.getItem("fiction"))
-            console.log(action,drama,romance,thriller,western,horror,fantasy,music,fiction)
+            
              if(action){
                document.getElementById('action-line').classList.add('no-display')
              }
@@ -78,81 +79,74 @@ function EntertainmentPage() {
              }
           }
           categoryHandler();
-    })
-    // Action Movies Fetch
-  useEffect(()=>{
-      async function fetchData() {
-          const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Action&limit=20&endYear=2025&list=most_pop_movies';
-          const options = {
-              method: 'GET',
-              headers: {
-                  'X-RapidAPI-Key': '9cadb1bce4mshf05307f8e00be1ap1a6c1ejsn26582e460cf0',
-                  'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-              }
-          };
 
-          try {
-              const response = await fetch(url, options);
-              const result = await response.json();
-             let movie1 =  result.results[0].primaryImage.url
-             let movie2 =  result.results[1].primaryImage.url
-             let movie3 =  result.results[2].primaryImage.url
-             let movie4 =  result.results[3].primaryImage.url
-             let movie5 =  result.results[4].primaryImage.url
-             let movie6 =  result.results[5].primaryImage.url
-             document.getElementById("movie1").src = movie1
-             document.getElementById("movie2").src = movie2
-             document.getElementById("movie3").src = movie3
-             document.getElementById("movie4").src = movie4
-             document.getElementById("movie5").src = movie5
-             document.getElementById("movie6").src = movie6
-          } catch (error) {
-              console.log(error);
-          }
-      }
-
-      fetchData();
-
-  })
-   // Drama Movies Fetch
-   useEffect(()=>{
-    async function fetchData() {
-        const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Drama&limit=20&endYear=2025&list=most_pop_movies';
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': '9cadb1bce4mshf05307f8e00be1ap1a6c1ejsn26582e460cf0',
-                'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+               // Action Movies Fetch
+          async function fetchAction() {
+            const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Action&limit=20&endYear=2025&list=most_pop_movies';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '9cadb1bce4mshf05307f8e00be1ap1a6c1ejsn26582e460cf0',
+                    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+                }
+            };
+  
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+               let movie1 =  result.results[0].primaryImage.url
+               let movie2 =  result.results[1].primaryImage.url
+               let movie3 =  result.results[2].primaryImage.url
+               let movie4 =  result.results[3].primaryImage.url
+               let movie5 =  result.results[4].primaryImage.url
+               let movie6 =  result.results[5].primaryImage.url
+               document.getElementById("movie1").src = movie1
+               document.getElementById("movie2").src = movie2
+               document.getElementById("movie3").src = movie3
+               document.getElementById("movie4").src = movie4
+               document.getElementById("movie5").src = movie5
+               document.getElementById("movie6").src = movie6
+            } catch (error) {
+                console.log(error);
             }
-        };
-
-        try {
-            const response = await fetch(url, options);
-            const result = await response.json();
-           let movie7 =  result.results[0].primaryImage.url
-           let movie8 =  result.results[1].primaryImage.url
-           let movie9 =  result.results[2].primaryImage.url
-           let movie10 =  result.results[3].primaryImage.url
-           let movie11 =  result.results[4].primaryImage.url
-           let movie12 =  result.results[5].primaryImage.url
-           document.getElementById("movie7").src = movie7
-           document.getElementById("movie8").src = movie8
-           document.getElementById("movie9").src = movie9
-           document.getElementById("movie10").src = movie10
-           document.getElementById("movie11").src = movie11
-           document.getElementById("movie12").src = movie12
-        } catch (error) {
-            console.log(error);
         }
-    }
+  
+        fetchAction();
 
-    fetchData();
-
-})
-
-    // Romance Movies Fetch
-    useEffect(()=>{
-        async function fetchData() {
+        // Drama Movies Fetch
+        async function fetchDrama() {
+            const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Drama&limit=20&endYear=2025&list=most_pop_movies';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '9cadb1bce4mshf05307f8e00be1ap1a6c1ejsn26582e460cf0',
+                    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+                }
+            };
+    
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+               let movie7 =  result.results[0].primaryImage.url
+               let movie8 =  result.results[1].primaryImage.url
+               let movie9 =  result.results[2].primaryImage.url
+               let movie10 =  result.results[3].primaryImage.url
+               let movie11 =  result.results[4].primaryImage.url
+               let movie12 =  result.results[5].primaryImage.url
+               document.getElementById("movie7").src = movie7
+               document.getElementById("movie8").src = movie8
+               document.getElementById("movie9").src = movie9
+               document.getElementById("movie10").src = movie10
+               document.getElementById("movie11").src = movie11
+               document.getElementById("movie12").src = movie12
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    
+        fetchDrama();
+        // Romance Movies Fetch
+        async function fetchRomance() {
             const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Romance&limit=20&endYear=2025&list=most_pop_movies';
             const options = {
                 method: 'GET',
@@ -182,13 +176,10 @@ function EntertainmentPage() {
             }
         }
     
-        fetchData();
-    
-    })
+        fetchRomance();
 
-    // Thriller Movie Fetch
-    useEffect(()=>{
-        async function fetchData() {
+        // Thriller Movie Fetch
+        async function fetchThriller() {
             const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Thriller&limit=20&endYear=2025&list=most_pop_movies';
             const options = {
                 method: 'GET',
@@ -218,12 +209,11 @@ function EntertainmentPage() {
             }
         }
     
-        fetchData();
-    
-    })
-    // Western Movie Fetch
-    useEffect(()=>{
-        async function fetchData() {
+        fetchThriller();
+
+
+        // Western Movie Fetch
+        async function fetchWestern() {
             const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Western&limit=20&endYear=2025&list=most_pop_movies';
             const options = {
                 method: 'GET',
@@ -253,13 +243,10 @@ function EntertainmentPage() {
             }
         }
     
-        fetchData();
-    
-    })
-   
-    // Horror Movie Fetch
-    useEffect(()=>{
-        async function fetchData() {
+        fetchWestern();
+
+         // Horror Movie Fetch
+        async function fetchHorror() {
             const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Horror&limit=20&endYear=2025&list=most_pop_movies';
             const options = {
                 method: 'GET',
@@ -289,14 +276,10 @@ function EntertainmentPage() {
             }
         }
     
-        fetchData();
-    
-    })
-
-    // Fantasy Movie Fetch
-    useEffect(()=>{
-        async function fetchData() {
-            const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Romance&limit=20&endYear=2025&list=most_pop_movies';
+        fetchHorror();
+        // Fantasy Movie Fetch
+        async function fetchFantasy() {
+            const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Fantasy&limit=20&endYear=2025&list=most_pop_movies';
             const options = {
                 method: 'GET',
                 headers: {
@@ -325,14 +308,11 @@ function EntertainmentPage() {
             }
         }
     
-        fetchData();
-    
-    })
+        fetchFantasy();
 
-    // Music Movie Fetch
-    useEffect(()=>{
-        async function fetchData() {
-            const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Romance&limit=20&endYear=2025&list=most_pop_movies';
+        // Music Movie Fetch
+        async function fetchMusic() {
+            const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Music&limit=20&endYear=2025&list=most_pop_movies';
             const options = {
                 method: 'GET',
                 headers: {
@@ -361,14 +341,11 @@ function EntertainmentPage() {
             }
         }
     
-        fetchData();
-    
-    })
+        fetchMusic();
 
-    // Fiction Movie Fetch
-    useEffect(()=>{
-        async function fetchData() {
-            const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Romance&limit=20&endYear=2025&list=most_pop_movies';
+        // Fiction Movie Fetch
+        async function fetchFiction() {
+            const url = 'https://moviesdatabase.p.rapidapi.com/titles/random?startYear=2015&genre=Mystery&limit=20&endYear=2025&list=most_pop_movies';
             const options = {
                 method: 'GET',
                 headers: {
@@ -397,10 +374,9 @@ function EntertainmentPage() {
             }
         }
     
-        fetchData();
+        fetchFiction();
+    })
 
-
-})
    
 
   
@@ -523,6 +499,7 @@ function EntertainmentPage() {
                 </div>
             </div>
       </div>
+      <Link className="back-home" to={"/Category/*"}>Browse</Link>
     </div>
   );
 }

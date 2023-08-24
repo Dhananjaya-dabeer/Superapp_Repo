@@ -138,13 +138,13 @@ function TopLeftProfile() {
         let author = data.results[0].source_id;
         // results[0].description
         let description = data.results[0].description;
-        // console.log(data)
+        console.log(description)
         let time  = data.results[0].pubDate
-        document.getElementById('newsdate').innerHTML = time;
-        document.getElementById("center").innerHTML = title;
-        document.getElementById("newscontainer1").innerHTML = author;
+        document.getElementById('newsdate').textContent = time;
+        document.getElementById("center").textContent = title;
+        document.getElementById("newscontainer1").textContent = author;
 
-        document.getElementById("newscontainer2").innerHTML = description;
+        document.getElementById("newscontainer2").textContent = description;
       })
       .catch(
         (error) => (document.getElementById("newscontainer1").innerHTML = error)
@@ -176,6 +176,7 @@ function TopLeftProfile() {
   };
       
   return (
+    <div className="container">
     <div className="left-profile">
       <div className="personal-weather-notes-timer">
         <div className="personal_weather-notes">
@@ -358,6 +359,7 @@ function TopLeftProfile() {
           </div>
         </div>
       </div>
+    </div>
       <Link id="browse" to={'/Category/Profile/Entertainment'}>Browse</Link>
     </div>
   );
