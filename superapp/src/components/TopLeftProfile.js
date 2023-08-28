@@ -21,7 +21,6 @@ function TopLeftProfile() {
   let [timeHour, setTimeHour] = useState(0);
   let [hour, setHour] = useState(0);
   let [minute, setMinute] = useState(0);
-
   const options = {
     hour: "numeric",
     minute: "numeric",
@@ -44,6 +43,8 @@ function TopLeftProfile() {
     document.getElementById("e-mail").innerText = email.toLowerCase();
     let userName = JSON.parse(localStorage.getItem("userName"));
     document.getElementById("user-name-font").innerText = userName;
+    let notes = JSON.parse(localStorage.getItem('notes'));
+    document.getElementById("notes").innerText = notes;
 
     if (action) {
       document.getElementById("action").classList.add("no-display");
@@ -170,9 +171,10 @@ function TopLeftProfile() {
     console.log(minute);
     console.log(second);
 
-    setHour(0);
-    setMinute(0);
-    setSecond(0);
+
+    // setHour(0);
+    // setMinute(0);
+    // setSecond(0);
   };
       
   return (

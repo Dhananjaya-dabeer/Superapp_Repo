@@ -523,6 +523,7 @@ background-color: #101744;
   border-radius: 19px;
   font-family: Roboto;
   font-weight: 700;
+  
 }
 .notes h2{
   color: black;
@@ -535,8 +536,7 @@ background-color: #101744;
 border:#F1C75B ;
 border-radius: 19px;
 font-family: Roboto;
-font-weight: 700;
-
+font-weight: 500;
 }
 
 .timer{
@@ -599,6 +599,7 @@ width: 60%;
 }
 .circular-timer{
   padding: 3%;
+  color: white;
 }
 .time{
   margin: 0;
@@ -635,11 +636,11 @@ width: 60%;
 .left-profile{
   display: flex;
   justify-content: space-around;
-  margin:3%   ;
+  /* margin:3%   ; */
 }
 #news-header{
   position: absolute;
-  top: 44%;
+  top: 38%;
   left:63.85% ;
 }
 #right-hlls{
@@ -670,7 +671,7 @@ width: 60%;
 
 .center{
   position: absolute;
-  top: 51%;
+  top: 48%;
   left: 77%;
   transform: translate(-43%, -30%);
   font-size: 1.3em;
@@ -690,10 +691,11 @@ width: 60%;
   font-family: Roboto;
   background-color: green;
   border-radius: 5px;
-  margin-top: 3%;
+  margin-top: 1.5%;
   display: inline-block;
-  margin-left: 60%;
-  width: 6%;
+  margin-left: 79%;
+  width: 7%;
+  height: 25px;
 }
 .entertainment{
   margin: 3% 5%;
@@ -743,6 +745,10 @@ width: 60%;
   border-radius: 5px;
   margin-top: 3%;
   display: inline-block;
-  margin-left: 90%;
-  width: 6%;
+  margin-left: 89%;
+  width: 8%;
+  height: 25px;
+}
+.container{
+  margin:0 3% 0 3%;
 }
